@@ -18,10 +18,10 @@ const createCompletionWithTimeout = async (
     timeout: number
 ) => {
     const completion = openAI.createCompletion({
-        model: 'text-davinci-002',
+        model: 'text-davinci-003',
         prompt: question,
-        temperature: 0.8,
-        max_tokens: 2048
+        temperature: 0.9,
+        max_tokens: 4000
     });
 
     return Promise.race([completion, timeoutPromise(timeout)]);
